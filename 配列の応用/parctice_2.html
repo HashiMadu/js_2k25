@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice_2</title>
+</head>
+
+<body>
+    <script>
+        //1か100までの連番が入った配列を生成する。
+        const numbers = [];
+        for (let i = 0; i <= 100; i++) {
+            numbers.push(i);
+            console.log(numbers[i]);
+        }
+        numbers.push();
+
+        //上記の配列から3の倍数の値だけを取り出した配列を生成する。
+        const threeNumbers = numbers.filter(numbers => numbers % 3 == 0);
+        console.log(threeNumbers);
+
+        //上記の配列の値を2乗した値が入った配列を生成する。
+        const powerNumbers = numbers.map(numbers => numbers ** 2);
+        //(number*number)
+        //(Math.pow(number,2)
+        console.log(powerNumbers);
+
+
+
+    </script>
+
+</body>
+
+</html>

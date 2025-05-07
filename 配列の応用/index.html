@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>配列の復習</title>
+</head>
+
+<body>
+    <script>
+        const scores = [10, 20, 30];
+        console.log(scores[0]);
+        console.log(scores.length);
+        //how many numbers are there in the array
+
+        scores[1] = 100;
+        console.log(scores[1]);
+        //you can change the number valiue
+
+        for (let i = 0; i < scores.length; i++) {
+            console.log(scores[i]);
+        }
+
+        scores.forEach((score) => {
+            console.log(score)
+        });
+        //foreach is get all in one array.like score.
+
+        scores.forEach((score, index) => {
+            console.log(`${index}: ${score}`);
+        });
+        //what way you want to display the array.
+
+
+        scores.push(40, 50);
+        console.log(scores);
+        //get number to back.
+
+        scores.unshift(-10, 0);
+        console.log(scores);
+        //one number front.
+
+        scores.pop();
+        console.log(scores);
+
+        scores.shift();
+        console.log(scores);
+
+        scores.splice(1, 1, 60, 70);
+        console.log(scores);
+
+
+        console.log(scores.join(' / '));
+        //use sth to divide to number.
+
+        scores.indexOf(10); // 0
+        scores.indexOf(100);
+        console.log(scores);
+        //use this to count the number.
+
+        scores.includes(10);
+        console.log(scores);
+        //is it there or no.
+
+
+
+        //追加知識
+        const prices = [180, 190, 200];
+        const updatePrices = prices.map((price, index) => price + index);
+        //take this one and get applya all in one.
+        //(number of valiu and conut the number .(price, index).
+        console.log(updatePrices);
+
+
+        //filterメソッド
+        const numbers = [1, 4, 7, 8, 10];
+        const evenNumbers = numbers.filter(number => number % 2 == 0);
+        console.log(evenNumbers);
+        //use this to filter the number.
+
+
+        //別の配列に展開する
+
+        const otherScores = [40, 50];
+        const scores2 = [10, 20, 30, otherScores];
+        console.log(scores2);
+        //ohtherscores is include 40 and 50
+
+        const ohtherScores = [40, 50];
+        const scores3 = [10, 20, 30, ...ohtherScores];
+        console.log(scores3);
+        //3 ponit is apply 40 and 50 in order.
+
+        //文字列を展開する
+        const text = 'Hello World';
+        const textArray = [...text];
+        console.log(textArray);
+
+        //関数への応用
+        const scores4 = [10, 20];
+        const sum = (a, b) => {
+            return a + b;
+        };
+        const result = sum(...scores4);
+        //(...scores4)=(scores4[0],scores4[1])
+        console.log(result);
+
+
+        //よく使う場面「配列のコピーを作る
+        const scores5 = [10, 20, 30];
+        const otherScores5 = [...scores5];
+        console.log(otherScores5);
+
+        scores[0] = 0;
+        console.log(otherScores5[0]);
+
+
+        // 分割代入
+        const scores6 = [10, 20, 30, 40, 50];
+        const [a, b, c, d] = scores6;
+        console.log(a, b);
+
+        //残余引数
+        const scores7 = [10, 20, 30, 40, 50];
+        const [a1, b1, ...others] = scores7;
+        console.log(a1, b1, others);
+
+
+        //値の入れ替え
+
+        let a2 = 10;
+        let b2 = 20;
+
+        [a2, b2] = [b2, a2];
+        console.log(`a:${a2}, b:${b2}`);
+
+
+
+    </script>
+
+</body>
+
+</html>

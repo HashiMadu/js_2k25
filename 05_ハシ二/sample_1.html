@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習</title>
+</head>
+
+<body>
+    <ul>
+
+        <li>リスト１</li>
+        <li>リスト２</li>
+        <li>リスト３</li>
+
+    </ul>
+    <script>
+
+        num = Math.floor(Math.random() * 10);
+        console.log(num);
+
+        num = Math.floor(Math.random() * 10) + 5;
+        console.log(num);
+
+        /*otherway*/
+        num = Math.floor(Math.random() * 10) + 5;
+        console.log(` random : ${num}`);
+
+
+
+
+
+        if (num < 5) {
+            console.log(`less than 5`)
+        } else {
+            console.log(`５以下`)
+        }
+
+        if (num < 8) {// || または　&&かつ
+            console.log(`less than 5`)
+        } else {
+            console.log(`8以下`)
+        }
+
+
+
+        let num2 = 10;
+        while (num2 > 0) {
+            num2--
+            console.log(`num2: ,num2`);
+        }
+
+        for (let i = 10; i > 0; i--) {
+            console.log(`i: ,i`);
+        }
+
+
+
+
+
+        const li = document.querySelectorAll(`li`);
+        console.log(li);
+        li[0] = addEventListener(`click`, () => {
+            console.log(li[0]);
+        })
+        li.forEach((Element) => {
+            Element.addEventListener(`mouseover`, () => {
+                console.log(Element);
+            })
+        })
+
+        const testFunc = (val1, val2) => {
+            console.log(`実行`);
+            return val1 + val2;
+        }
+        console.log(testFunc(2, 3));
+        setInterval(testFunc, 1000)
+
+
+
+        const p = document.createElement('p');
+        p.classList.add(`sample`);
+        p.ytextContent = `サンプルa`;
+        document.body.append(p);
+
+        const obj = {
+            int: 123,
+            str: "りんご"
+           bool: false,
+            obj: {
+                sub: "banana"
+            }
+            名前："hashini",
+        }
+        console.log(obj.int);
+
+
+
+    </script>
+
+</body>
+
+</html>
