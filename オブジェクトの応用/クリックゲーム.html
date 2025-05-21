@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>クリックゲーム</title>
+    <style>
+        dl {
+            text-align: center;
+        }
+
+        dd {
+            margin: 0;
+        }
+
+        .name {
+            margin-bottom: 1em;
+            font-weight: bold;
+        }
+
+        .pic {
+            cursor: pointer;
+        }
+
+        .hp {
+            margin-top: .5em;
+            font-style: oblique;
+        }
+    </style>
+</head>
+
+<body>
+
+    <dl>
+        <dt class="name">名前</dt>
+        <dd><img class="pic" src="./monster/slime.png" alt="" width="200"></dd>
+        <dd class="hp">HP:0</dd>
+        <dd class="Left">Left:0</dd>
+    </dl>
+    <script>
+        const monsters = [
+            {
+                name: "スライム",
+                pic: "./monster/slime.png",
+                hp: 4
+            },
+            {
+                name: "目玉",
+                pic: "./monster/eye.png",
+                hp: 6
+            },
+            {
+                name: "半魚人",
+                pic: "./monster/fish.png",
+                hp: 8
+            },
+            {
+                name: "one eye",
+                pic: "./monster/one.jpg",
+                hp: 10
+            }
+        ];
+
+        //add picture ==========================================
+        //各要素を指定------
+        const nameEl = document.querySelector('.name');
+        const picEl = document.querySelector('.pic');
+        const hpEl = document.querySelector('.hp');
+        const NumEl = document.querySelector('.Left');
+
+        let currentHp = 0;
+        let currentMonster = 0;
+
+        NumEl.textContent = `left${monsters.length - currentMonster}体`;
+
+        // shuffle-------------------------------------------
+        const shuffle = (array) => {
+            for (let i = array.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            };
+            return array;
+        };
+        // console.log(shuffle([...monsters]));
+        // console.log(monsters);
+
+        const shuffleMonsters = shuffle([...monsters]);
+
+
+        //monster add here.this is in all in one-----------
+        const setMonster = (monster) => {
+            nameEl.textContent = monster.name;
+            picEl.src = monster.pic;
+            currentHp = Math.floor(Math.random() * 5) + 5;
+            hpEl.textContent = `HP:${currentHp}`;
+            NumEl.textContent = `left ${monsters.length - currentMonster}`;
+        }
+        setMonster(shuffleMonsters[currentMonster]);
+
+        //get down the number
+        // let currentHp = monsters[0].hp;
+        // let currentMonster = 0;
+
+        picEl.addEventListener('click', () => {
+            if (currentHp > 0) {
+                currentHp--;
+                hpEl.textContent = `HP:${currentHp} `;
+
+            }
+
+            else {
+                currentMonster++;
+                //if文に変更
+                if (currentMonster >= monsters.length) {
+                    NumEl.textContent = '残り: 0';
+                    alert('モンスターを全て倒しました！');
+                } else {
+                    setMonster(shuffleMonsters[currentMonster]);
+                    NumEl.textContent = `Left ${monsters.length - currentMonster}`;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>オブジェクトの応用</title>
+</head>
+
+<body>
+
+    <script>
+        const point = {
+            x: 100,
+            y: 180,
+        }
+        console.log(point.x);
+        // console.log(point['x']);
+        //same way
+
+        const link = {
+            textContent: 'トライデント',
+            href: 'https://computer.trident.ac.jp',
+        };
+
+
+        const anchor = document.createElement('a');
+        anchor.textContent = link.textContent;
+        document.body.appendChild(anchor);
+        anchor.setAttribute('href', link.href);
+        // anchor.href=link.href;
+        //this is same way like above
+        document.body.appendChild(anchor);
+
+    </script>
+
+</body>
+
+</html>

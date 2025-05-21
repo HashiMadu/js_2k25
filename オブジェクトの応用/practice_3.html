@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice3
+
+    </title>
+</head>
+
+<body>
+    <script>
+        const teacher = [
+            {
+                name: "高木",
+                age: 42,
+                blood: "B"
+            },
+            {
+                name: "田中",
+                age: 35,
+                blood: "AB"
+            }
+        ];
+        console.log(teacher[1].name);
+
+
+        /* 値を取り出す
+      --------------------*/
+        teacher.forEach((item) => {
+            for (const key in item)
+                console.log(key, item[key]);
+
+        });
+
+
+
+
+
+        //---------------------------------------
+
+        for (const [index, person] of teacher.entries()) {
+            console.log(person);
+        }
+        for (const [key, value] of Object.entries(point)) {
+            console.log(key, value);
+        }
+
+
+
+        // const fruits = ['apple', 'banana', 'orange'];
+        // furist.forEach(index, fruits) => console.log(item, index)
+
+        // for (const [fruits, index] of fruits.entries()) {
+        //     console.log(fruit);
+        // }
+
+
+
+    </script>
+
+</body>
+
+</html>

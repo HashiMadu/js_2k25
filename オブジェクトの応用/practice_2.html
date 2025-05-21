@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>追加知識</title>
+</head>
+
+<body>
+    <script>
+        const otherProps = {
+            z: 90,
+            color: 'red',
+        }
+
+        const point3d = {
+            x: 100,
+            y: 180,
+            ...otherProps,
+            // add this for add every thing ine by one
+
+        };
+
+        console.log(point3d);
+
+        const { x, color, ...other } = point3d;
+        console.log(x, color, other);
+        //100 'red'
+        // >{y: 180, z: 90}
+
+        const point = {
+            x: 100,
+            y: 180,
+            z: 90,
+        }
+        for (const key in point) {
+            console.log(key);
+            console.log(point[key]);
+            //[] in here you can use
+        }
+        //add this to get one by one
+
+        console.log(Object.keys(point));
+        console.log(Object.values(point));
+        console.log(Object.entries(point));
+
+        Object.entries(point).forEach(([key, value]) => {
+            console.log(key, value);
+        });
+
+
+
+
+        //practice
+        const timeTable = {
+            Sun: '定休日',
+            Mon: '10:00〜19:00',
+            Tue: '10:00〜19:00',
+            Wed: '10:00〜19:00',
+            Thu: '10:00〜19:00',
+            Fri: '10:00〜19:00',
+            Sat: '10:00〜14:00',
+        };
+        console.log(Object.keys(timeTable));
+        console.log(Object.values(timeTable));
+        console.log(Object.entries(timeTable));
+
+        Object.entries(timeTable).forEach(([key, value]) => {
+            console.log(key, value);
+        });
+
+
+        const table = document.createElement('table');
+        const firstTr = document.createElement('tr');
+        const secondTr = document.createElement('tr');
+
+
+        document.body.appendChild(table);
+        table.appendChild(firstTr);
+        table.appendChild(secondTr);
+
+    </script>
+
+    <table>
+        <tr>
+            <th>Sun</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+            </th>
+        </tr>
+        <td>定休日</td>
+        <td>10:00〜19:00</td>
+        <td>10:00〜19:00</td>
+        <td>10:00〜19:00</td>
+        <td>10:00〜19:00</td>
+        <td>10:00〜19:00</td>
+        <td>10:00〜14:00</td>
+        <tr>
+            t
+        </tr>
+    </table>
+
+</body>
+
+</html>
