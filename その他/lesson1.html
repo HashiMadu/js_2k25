@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>その他</title>
+</head>
+
+<body>
+    <script>
+        const str = "hello";
+        console.log(str + 10);
+        //add 10  to string
+        console.log(str.length);
+        //you add length to count the letters in the string
+        console.log(str[3]);
+        //this get letter you add number of the order
+        console.log(str.substring(2, 4));
+        //add leters in
+
+        const strArr = [...str];
+        console.log(strArr);
+
+        const weeks = "月火水木金土日";
+        console.log(...weeks);
+        //this can use to show all words in string
+
+        const joinArr = strArr.join('/');
+        console.log(joinArr);
+        // this is result h/e/l/l/o
+
+        const joinArr1 = strArr.join(',');
+        console.log(joinArr1);
+        //this is result h,e,l,l,o
+
+        const splitArr = joinArr.split('/');
+        console.log(splitArr);
+        //this is result ["h", "e", "l", "l", "o"]
+
+        const [first, , second, ...other] = splitArr;
+        console.log(first);
+        console.log(second);
+        console.log(other);
+
+
+        const name = "Hashini";
+        const nameArr = [...name];
+        console.log(nameArr.join('.'));
+        //this is result H.a.s.h.i.n.i.
+        //frist you want to separate letters and add the dote
+
+
+
+
+        //様々なメソッド-------------------------------------------------
+
+        const str2 = "Webデザイン学科";
+        console.log(str.slice(0, 3));
+        //tis is result get letter -0 to letter-3 that is letter  orde number
+
+        console.log(str2.replace('web', 'グラフィック'));
+        //this is result Webデザイングラフィック'))
+
+        console.log(str2.indexOf('Web'));
+        //this is result 0'))
+        console.log(str2.indexOf('CG'));
+        //ths is the result -1
+
+        console.log(str2.repeat(3));
+        //repeat 3 times
+
+        console.log(str2.padStart(20, '!'));
+        //!!!!!!!!!!!Webデザイン学科
+        console.log(str2.padEnd(20, '!'));
+        //Webデザイン学科!!!!!!!!!!!
+        //above two of 20 is full of letter and !
+
+        //数値の操作----------------------------------------------------------------
+        const scores = [10, 3, 9];
+        let sum = 0;
+        for (const score of scores) {
+            sum += score;
+        };
+
+        const avg = sum / scores.length;
+
+        console.log(`${sum} : ${avg}`);
+        console.log(Math.floor(avg));
+        console.log(Math.ceil(avg));
+        console.log(Math.round(avg));
+        console.log(avg.toFixed(3));
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

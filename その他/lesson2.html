@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日時の操作</title>
+</head>
+
+<body>
+    <script>
+        const d = new Date();
+        console.log(d.getMonth() + 1, d.getDate());
+        console.log(d.getDate);
+        console.log(Date.now() / 1000 / 60 / 60);
+
+
+        let nowTime;
+        let previousTime = Date.now();
+
+        window.addEventListener('click', () => {
+            nowTime = Date.now();
+            console.log((nowTime - previousTime) / 1000);
+            previousTime = nowTime;
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice1</title>
+</head>
+
+<body>
+    <script>
+        //1〜10までの数字が入った配列を作る。
+        const numbers = [];
+        for (let i = 1; i <= 10; i++) {
+            numbers.push(i);
+        }
+        console.log(numbers)
+
+        //配列に入れた数字を全部足す。
+        let sum = 0;
+        for (const number of numbers) {
+            sum += number;
+        };
+        console.log(sum);
+
+
+        //それの平均値を出して、小数点第2位まで表示する。
+        const avg = sum / numbers.length;
+        console.log(avg.toFixed(2));
+
+
+        //その値を2乗して、小数点で切り捨てる。
+        console.log(Math.floor(Math.pow(avg, 2)));
+
+
+
+
+    </script>
+
+</body>
+
+</html>
